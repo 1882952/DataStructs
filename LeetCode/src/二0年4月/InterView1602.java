@@ -1,0 +1,44 @@
+package 二0年4月;
+
+import java.util.HashMap;
+import java.util.Map;
+
+/*
+* 设计一个方法，找出任意指定单词在一本书中的出现频率。
+你的实现应该支持如下操作：
+WordsFrequency(book)构造函数，参数为字符串数组构成的一本书
+get(word)查询指定单词在数中出现的频率
+    示例：
+    WordsFrequency wordsFrequency = new WordsFrequency({"i", "have", "an",
+    "apple", "he", "have", "a", "pen"});
+wordsFrequency.get("you"); //返回0，"you"没有出现过
+wordsFrequency.get("have"); //返回2，"have"出现2次
+wordsFrequency.get("an"); //返回1
+wordsFrequency.get("apple"); //返回1
+wordsFrequency.get("pen"); //返回1
+
+思路：使用Map，将单词作为key，有重复的单词，就对key对应的value加1.
+* */
+public class InterView1602 {
+    private Map<String,Integer> map;
+
+    public InterView1602(String[] book) {
+        map=new HashMap<>();
+        for (String word : book) {
+            if(!map.containsKey(word)){ //不包含该word，就添加
+                map.put(word,1);
+            }else {  //包含就value自增
+                int i=map.get(word);
+                i++;
+                //更新word对应的value
+                map.put(word,i);
+            }
+        }
+    }
+    public int get(String word) {
+        if(map.containsKey(word)){
+            return map.get(word);
+        }
+        return 0;
+    }
+}
