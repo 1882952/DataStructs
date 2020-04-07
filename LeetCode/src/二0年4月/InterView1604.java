@@ -45,17 +45,18 @@ public class InterView1604 {
                 else if (ch == 'O')
                     ++o_co;
             }
-            //没下满棋盘
-            if (x_co+o_co<len*len){
-                if(is_win('X')){
-                    return "X";
-                }
-                if (is_win('O')){
-                    return "O";
-                }
-                return "Pending";
-            }
         }
+        //没下满棋盘
+        if (x_co+o_co<len*len){
+            if(is_win('X')){
+                return "X";
+            }
+            if (is_win('O')){
+                return "O";
+            }
+            return "Pending";
+        }
+
         //下满棋盘
         if(is_win('X')){
             return "X";
