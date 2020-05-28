@@ -25,9 +25,9 @@ public class BagDemo {
             }
             return;
         }
-        f(i+1,cw,items,n,w);
-        if(cw+items[i]<=w){ // 如果不满足这个条件，则证明已经超过可以背包承受的重量的时候，就不要再装了
-            f(i+1,cw+items[i],items,n,w); //满足则继续装
+        f(i+1,cw,items,n,w); //选择不装第i个物品
+        if(cw+items[i]<=w){ //如果加入第i个物品总重量仍然小于w
+            f(i+1,cw+items[i],items,n,w); // 那么就将第i个物品装进去
         }
     }
 
