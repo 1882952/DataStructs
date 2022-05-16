@@ -36,7 +36,7 @@ public class FullRangeTest {
             // 将已选择的马匹从未出战的列表中移出
             ArrayList rest_horses = ((ArrayList)horses.clone());
             rest_horses.remove(i);
-            result.remove(horses.get(i));
+            permutate(rest_horses,new_result);
         }
     }
 
