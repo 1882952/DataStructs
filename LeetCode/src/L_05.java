@@ -23,7 +23,6 @@ public class L_05 {
         String res="";
         char[] chars=s.toCharArray();
         boolean [][] dp=new boolean[s.length()][s.length()];  //动态规划判断dp[i][j]
-        int max=0;  //标记是否为最长的
         //根据公式，知道了i+1才会知道i，所以倒着遍历就行
         for (int i=s.length()-1;i>=0;i--){
             for (int j = i; j <s.length(); j++) {
